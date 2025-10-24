@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Ball {
+class Ball : public Entity{
 public:
     sf::CircleShape shape;
     sf::Vector2f velocity;

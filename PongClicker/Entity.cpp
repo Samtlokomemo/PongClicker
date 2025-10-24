@@ -1,7 +1,9 @@
 #include "Entity.h"
+#include <memory>
 using namespace sf;
+using namespace std;
 
-Entity::Entity(float x, float y, float width, float height, Color color) {
+Entity::Entity(float x, float y, float width, float height, Color color, unique_ptr<Shape> shape) {
 
 	position = { x, y };
 	velocity = { 0.f, 0.f };
@@ -10,7 +12,6 @@ Entity::Entity(float x, float y, float width, float height, Color color) {
 	fric = 1500.f;
 	breakFac = 3.0f;
 	maxSpeed = 400.f;
-
 	shape.setSize({ width, height });
 	shape.setFillColor(color);
 	shape.setPosition(position);
